@@ -1,36 +1,22 @@
-# Class exercises - configuration for single class
----
-classes:
-  - exercises:
-      # `file` is relative to .strigo directory
-      - file: "../hello-world/hello.md"
-        title: "Hello!"
-      - file: "../hello-world/world.md"
-        title: "World!"
-
-# Class exercises - configuration for multiple classes
+# Class lab resources - configuration for multiple classes
 # ---
-# classes:
-#   # `class_id` may be omitted if there is only one class in this file
-#   - class_id: "<your_class_id>"
-#     exercises:
-#       # `file` is relative to .strigo directory
-#       - file: "../hello-world/hello.md"
-#         title: "Hello!"
-#       - file: "../hello-world/world.md"
-#         title: "World!"
-#   - class_id: "<your_class_id>"
-#     exercises:
-#       - file: "../markup-syntaxes/markdown.md"
-#         title: "Markdown!"
-#         # `syntax` is optional
-#         # can be "md" | "rst"
-#         # uses file extension as fallback
-#         syntax: "md"
-#       - file: "../markup-syntaxes/restructured.rst"
-#         title: "Restructed"
-#         syntax: "rst"
-#   - class_id: "<your_class_id>"
-#     exercises:
-#       - file: "../relative-images/md-with-relative-imgs.md"
-#         title: "Relative images"
+classes:
+  - class_id: "68c79e64b80e0bd8841257b4"  #FME Form Advanced
+    lab_resources:
+      - display_name: "Lab"
+        platform_type: "lab"
+        image_platform: "windows"
+        view_interface: "desktop"
+        cloud_provider: "aws"
+        aws_vm_definition:
+          machine_size: "c6i.2xlarge"
+          ami_region_mapping:
+            ca-central-1:
+              image_id: "ami-0f465ae4c20dfc870"
+            eu-west-1:
+              image_id: "ami-0ec7d29baf78d2a77"
+            ap-northeast-1:
+              image_id: "ami-02d869a02931ad0f8"
+            ap-southeast-2:
+              image_id: "ami-0b966cba38ad2a952"
+          custom_username: "Administrator"
