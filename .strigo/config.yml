@@ -1,5 +1,18 @@
 # Class lab resources - configuration for multiple classes
 # ---
+
+# Define Lab Resources
+
+FME2025_1_3: &FME2025_1_3
+  ca-central-1:
+    image_id: "ami-0f465ae4c20dfc870"
+  eu-west-1:
+    image_id: "ami-0ec7d29baf78d2a77"
+  ap-northeast-1:
+    image_id: "ami-02d869a02931ad0f8"
+  ap-southeast-2:
+    image_id: "ami-0b966cba38ad2a952"
+    
 classes:
   - class_id: "691d1c0b530c3e7c3ae85ed9"  #Copy of FME Form Advanced
     lab_resources:
@@ -10,15 +23,7 @@ classes:
         cloud_provider: "aws"
         aws_vm_definition:
           machine_size: "c6i.2xlarge"
-          ami_region_mapping:
-            ca-central-1:
-              image_id: "ami-0f465ae4c20dfc870"
-            eu-west-1:
-              image_id: "ami-0ec7d29baf78d2a77"
-            ap-northeast-1:
-              image_id: "ami-02d869a02931ad0f8"
-            ap-southeast-2:
-              image_id: "ami-0b966cba38ad2a952"
+          ami_region_mapping: *FME2025_1_3
           custom_username: "Administrator"
         user_data: |-
           <powershell>
@@ -31,4 +36,4 @@ classes:
           
           Copy-Item 'c:\temp\startup.bat' 'c:\Users\Administrator\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\startup.bat'
           
-          </powershell>"
+          </powershell>
